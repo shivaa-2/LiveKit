@@ -1,0 +1,26 @@
+port: 7880
+log_level: info
+rtc:
+  tcp_port: 7881
+  port_range_start: 50000
+  port_range_end: 60000
+  # use_external_ip should be set to true for most cloud environments where
+  # the host has a public IP address, but is not exposed to the process.
+  # LiveKit will attempt to use STUN to discover the true IP, and advertise
+  # that IP with its clients
+  use_external_ip: false
+redis:
+  # redis is recommended for production deploys
+  address: 127.0.0.1:6379
+
+keys:
+  APIScaj32Go52ju: eXWWMjNhvmVN6fonYbHkvfN2Ya7Vfi0b0mGaUfmAhgzC
+   
+# when enabled, LiveKit will expose prometheus metrics on :6789/metrics
+#prometheus_port: 6789
+turn:
+  enabled: false
+  # domain must match tls certificate
+
+  # defaults to 3478. If not using a load balncer, must be set to 443.
+  tls_port: 3478
